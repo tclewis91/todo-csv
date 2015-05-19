@@ -38,6 +38,9 @@ class Todo
 
   def view_todos
     puts "Unfinished"
+    @todos.map.with_index do |row, index|
+      print "#{index + 1}) #{row['name']}"
+    end
     print "Completed"
   end
 
