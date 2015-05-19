@@ -4,7 +4,7 @@ class Todo
 
   def initialize(file_name)
     @file_name = file_name
-    @todos = CSV.read('todos.csv', headers: true)
+    @todos = CSV.read(@file_name, headers: true)
   end
 
 
