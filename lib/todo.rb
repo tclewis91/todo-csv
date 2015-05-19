@@ -36,6 +36,12 @@ class Todo
     @todos
   end
 
+  def add_todo
+    puts "Name of Todo > "
+    gets_input
+    puts "make this test pass,no\n"
+  end
+end
   def view_todos
     puts "Unfinished"
     @todos.map.with_index do |row, index|
@@ -51,5 +57,4 @@ class Todo
 
   def save!
     File.write(@file_name, @todos.to_csv)
-  end
 end
