@@ -5,34 +5,35 @@ require_relative './spec_helper'
 class TodoTest < Test::Unit::TestCase
 
   def todo_setup
-    $input, $output = [] # Reset all messages between tests
+    $input = $output = [] # Reset all messages between tests
     @todo = Todo.new('test_todos.csv') # Given
   end
 
   def test_view_todos_prints_unfinished_header
     todo_setup # Given
-    @todo.view_todos # When
+    @todo.view_todos #When
     assert($output.include?("Unfinished")) # Then
     #We are asserting that the string 'Unfinished' is somewhere in the output of the program.
     #That somewhere in the view_todos methos we said `puts "Unfinished"`
   end
 
-  # ============
-  # ==============================================================
-  # -- UNCOMMENT EACH TEST WHEN YOU GET THE ONE BEFORE IT TO PASS
+  # # ============
+  # # ==============================================================
+  # # -- UNCOMMENT EACH TEST WHEN YOU GET THE ONE BEFORE IT TO PASS
   # ==============================================================
   # ============
 
-  #def test_view_todos_prints_completed_header
-  #  todo_setup # Given
-  #  @todo.view_todos # When
-  #  assert($output.include?("Completed")) # Then
-  #end
+  def test_view_todos_prints_completed_header
+   todo_setup # Given
+   @todo.view_todos # When
+   assert($output.include?("Completed")) # Then
+  end
 
-  #def test_view_todos_prints_todos
-  #  todo_setup # Given
-  #  assert_equal("1) finish homework", $output[1]) # Then
-  #end
+  def test_view_todos_prints_todos
+   todo_setup # Given
+   @todo.view_todos #when
+   assert_equal("1) finish homework", $output[1]) # Then
+  end
 
   #def test_add_todo_prints_prompt
   #  todo_setup # Given
