@@ -35,11 +35,11 @@ class TodoTest < Test::Unit::TestCase
    assert_equal("1) finish homework", $output[1]) # Then
   end
 
-  # def test_add_todo_prints_prompt
-  #  todo_setup # Given
-  #  @todo.add_todo
-  #  assert_equal("Name of Todo > ", $output.last)
-  # end
+  def test_add_todo_prints_prompt
+   todo_setup # Given
+   @todo.add_todo
+   assert_equal("Name of Todo > ", $output.last)
+  end
 
   #def test_add_todo_creates_new_todo
   #  todo_setup # Given
