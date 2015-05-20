@@ -53,7 +53,10 @@ class Todo
 
 def mark_todo
   puts "Which todo have you finished?"
+  get_input = "finish homework"
+  @todos << "#{'finish homework'},yes\n"
 end
+#need to make it read yes/true instead of no...crap.
 
   private
   def get_input
