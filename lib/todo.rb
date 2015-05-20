@@ -51,6 +51,9 @@ class Todo
     print "Completed"
   end
 
+def mark_todo
+  puts "Which todo have you finished?"
+end
 
   private
   def get_input
